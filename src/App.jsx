@@ -8,7 +8,7 @@ function getUserById(userId) {
   return usersFromServer.find(user => user.id === userId) || null;
 }
 
-export const todos = todosFromServer.map(todo => ({
+export const preparedTodos = todosFromServer.map(todo => ({
   ...todo,
   user: getUserById(todo.userId),
 }));
@@ -16,6 +16,6 @@ export const todos = todosFromServer.map(todo => ({
 export const App = () => (
   <div className="App">
     <h1 className="App__title">Static list of todos</h1>
-    <TodoList todos={todos} />
+    <TodoList preparedTodos={preparedTodos} />
   </div>
 );

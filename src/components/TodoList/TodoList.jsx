@@ -1,8 +1,8 @@
 import { TodoInfo } from '../TodoInfo';
 
-export const TodoList = ({ todos }) => (
+export const TodoList = ({ preparedTodos }) => (
   <section className="TodoList">
-    {todos.map(todo => (
+    {preparedTodos.map(todo => (
       <TodoInfo key={todo.id} todo={todo} />
     ))}
   </section>
